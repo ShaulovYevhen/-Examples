@@ -10,7 +10,6 @@ namespace Variables
             float \u006fIdentifier;
             int &myVar;
             string myVariab1le;
-
         }
     }
 }
