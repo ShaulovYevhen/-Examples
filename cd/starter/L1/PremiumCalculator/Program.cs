@@ -24,12 +24,11 @@ namespace PremiumCalculator
             {
                 Console.WriteLine("Ошибка ввода! (Введите целое чиcло меньше 100)");
             }
-            if (serviceLenght > 70)
+            if (serviceLenght > 100)
             {
                 Console.WriteLine("Ошибка ввода! (Введите целое чиcло меньше 100)");
                 goto link1; 
             }
-            
             if (serviceLenght < 5)
             {
                 Console.WriteLine("Премия : " +(salary*0.10)+" у.е.");
@@ -49,24 +48,24 @@ namespace PremiumCalculator
             else if (serviceLenght >= 20 && serviceLenght < 25)
             {
                 Console.WriteLine("Премия : " + (salary * 0.45) + " у.е.");
-            }
+            } 
             else 
             {
                 Console.WriteLine("Премия : " + (salary * 0.5) + " у.е.");
             }
             Console.WriteLine("Чтобы продолжить введите 1 и нажмите ENTER. Для выхода введите любой другой символ");
-            try
+            try 
             {
                 int n = Convert.ToInt32(Console.ReadLine()); 
                 if (n == 1) 
                 {
                 goto link2;
-                }
+                } 
                 else
                 {
                 Environment.Exit(0);
                 }
-            }
+            }  
             catch (System.FormatException)
             {
                 Environment.Exit(0);
