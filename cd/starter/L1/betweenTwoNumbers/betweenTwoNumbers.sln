@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "betweenTwoNumbers", "betwee
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figures", "..\Figures\Figures.csproj", "{A32C7B4E-1D8F-4734-8249-6CE618F358C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "factorial", "..\factorial\factorial.csproj", "{FF8E38CD-65A7-4759-9F93-C70F1455B3E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A32C7B4E-1D8F-4734-8249-6CE618F358C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A32C7B4E-1D8F-4734-8249-6CE618F358C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A32C7B4E-1D8F-4734-8249-6CE618F358C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF8E38CD-65A7-4759-9F93-C70F1455B3E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8E38CD-65A7-4759-9F93-C70F1455B3E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8E38CD-65A7-4759-9F93-C70F1455B3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8E38CD-65A7-4759-9F93-C70F1455B3E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
