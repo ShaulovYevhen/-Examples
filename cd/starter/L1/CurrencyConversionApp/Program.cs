@@ -6,12 +6,12 @@ namespace CurrencyConversionApp
     {
         static float Input()
         {
-            float num;
-            while (!float.TryParse(Console.ReadLine(), out num))
+            float number; 
+            while (!float.TryParse(Console.ReadLine(), out number))
             {
                 Console.WriteLine("Error!Enter number");
             }
-            return num;
+            return number; 
         }
 
         static void Converter(float amounth, float exchangeRate)
