@@ -6,26 +6,27 @@ namespace CurrencyConversionApp
     {
         static float Input()
         {
-            float Num;
-            while (!float.TryParse(Console.ReadLine(), out Num))
+            float num;
+            while (!float.TryParse(Console.ReadLine(), out num))
             {
                 Console.WriteLine("Error!Enter number");
             }
-            return Num;
+            return num;
         }
 
-        static void converter(float amounth, float exchangeRate)
+        static void Converter(float amounth, float exchangeRate)
         {
             Console.WriteLine(amounth * exchangeRate);
         }
+
         static void Main(string[] args)
         {
-            float amounth, exchangeRate;
+            float amount, exchangeRate;
             Console.WriteLine("Enter the amount of money you need to transfer: ");
-            amounth = Input();
+            amount = Input();
             Console.WriteLine("Enter exchange rate: ");
             exchangeRate = Input();
-            converter(amounth,exchangeRate);
+            Converter(amount , exchangeRate);
             Console.ReadKey();
         }
     }
