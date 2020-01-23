@@ -37,7 +37,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="DetermineWhatNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -47,9 +47,9 @@
     <Content Include="Readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UnitTests\UnitTests.csproj">
+    <ProjectReference Include="..\UnitTests\DetermineWhatNumberTests.csproj">
       <Project>{9b4c6ad4-f3e7-4505-9dd6-d5d9607b4480}</Project>
-      <Name>UnitTests</Name>
+      <Name>DetermineWhatNumberTests</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

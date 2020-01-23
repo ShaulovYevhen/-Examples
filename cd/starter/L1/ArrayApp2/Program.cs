@@ -21,7 +21,7 @@ namespace ArrayApp2
             int[] invertedArray = new int[array.Length];
             for (int i = 0; i < array.Length; i++)
             {
-                invertedArray[i] = array[array.Length - i-1];
+                invertedArray[i] = array[array.Length - i - 1];
             }
 
             return invertedArray;
@@ -31,7 +31,7 @@ namespace ArrayApp2
         {
             for (int i = 0; i < array.Length; i++)
             {
-                Console.Write(array[i]+" ");
+                Console.Write(array[i] + " ");
             }
 
             Console.WriteLine();
@@ -39,7 +39,7 @@ namespace ArrayApp2
 
         static int[] SubArray(int[] array, int index, int count)
         {
-            int [] subArray = new int[count];
+            int[] subArray = new int[count];
             for (int i = 0; i < subArray.Length; i++)
             {
                 if (index < array.Length)
@@ -61,7 +61,7 @@ namespace ArrayApp2
             int[] array = ArrayCreate(21);
             ArrayPrint(array);
             ArrayPrint(MyReverse(array));
-            ArrayPrint(SubArray(array,10,30));
+            ArrayPrint(SubArray(array, 10, 30));
 
             Console.ReadKey();
         }

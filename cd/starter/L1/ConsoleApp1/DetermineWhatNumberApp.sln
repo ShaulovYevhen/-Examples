@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DetermineWhatNumberApp", "DetermineWhatNumberApp.csproj", "{3966FFFF-EF76-4B5F-9D58-4A83B9C63AB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{9B4C6AD4-F3E7-4505-9DD6-D5D9607B4480}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DetermineWhatNumberTests", "..\UnitTests\DetermineWhatNumberTests.csproj", "{9B4C6AD4-F3E7-4505-9DD6-D5D9607B4480}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
