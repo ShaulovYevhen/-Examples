@@ -27,11 +27,12 @@ namespace ConsoleApp3
 
         static int[] ArrayIncrease(int[] array)
         {
-            int[] biggerArray = new int[array.Length+1];
+            int[] biggerArray = new int[array.Length + 1];
             for (int i = 0; i < array.Length; i++)
             {
                 biggerArray[i] = array[i];
             }
+
             return biggerArray;
         }
 
@@ -43,6 +44,7 @@ namespace ConsoleApp3
             {
                 biggerArray[i] = array[j];
             }
+
             return biggerArray;
         }
 

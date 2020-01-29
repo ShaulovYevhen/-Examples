@@ -6,6 +6,11 @@ namespace UnitTests
     [TestClass]
     public class DetermineWhatNumberTests
     {
+        [TestInitialize]
+
+
+
+
         [TestMethod]
         public void IsPrimeNum_11_true()
         {
@@ -13,7 +18,7 @@ namespace UnitTests
             int x = 11;
             bool expected = true;
             //act
-            
+
             //assert
         }
     }

@@ -1,0 +1,175 @@
+/*1. Известно, что 1 дюйм равен 2.54 см. 
+Разработать при­ложение, переводящие дюймы в сантиметры и наоборот.
+Диалог с пользователем реализовать через систему меню.*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    short int choice;
+    cout << "Enter 1 to convert inches to centimeters.\nEnter 2 to convert centimeters to inches.\n";
+    cin >> choice;
+    switch (choice)
+    {
+    case 1:
+        float inches;
+        cout << "Enter inches\n"; cin >> inches;
+        cout << inches << " inches equals " << inches * 2.54 << " centimeters\n";
+        break;
+    case 2:
+        float centimeters;
+        cout << "Enter centimeters\n"; cin >> centimeters;
+        if (centimeters == 0)
+        {
+            cout << "zero is zero everywhere\n";
+        }
+        else
+        {
+            cout << centimeters << " centimeters equals " << centimeters / 2.54 << " inches\n";
+        }
+        break;
+    default:
+        cout << "wrong choice\n";
+    }
+    return 0;
+}
+/*2. Пользователь вводит три числа.
+Если самое большое из трех - четное, то все числа суммируются и сумма выводится на экран.
+А если самое большое - нечетное, то все числа перемножаются.*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int first, second, third, max;
+    cout << "Enter first\n"; cin >> first;
+    cout << "Enter second\n"; cin >> second;
+    cout << "Enter third\n"; cin >> third;
+    if (first > second)
+    {
+        max = first;
+    }
+    else
+    {
+        max = second;
+    }
+    if (max < third)
+    {
+        max = third;   
+    }
+	if (max%2==0)
+	{
+        cout << "Summ = " << first + second + third<<endl;
+	}
+	else
+	{
+        cout << "Multiplication = " << first * second * third << endl;
+	}
+    return 0;
+}
+/* 3. Пользователь вводит радиус окружности. На экран выводится меню. 
+1 - площадь круга
+2 - длина окружности
+3 - площадь квадрата, в который вписана окружность
+Пользователь выбирает пункт и получает на экран соответсвующее решение.*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    float radius;
+    cout << "Enter the radius of the circle(greater than 0)\n";
+    cin >> radius;
+    if (radius <= 0)
+    {
+        cout << "Wrong radius\n";
+        return 0;
+    }
+    short int choice;
+    cout << " 1 - area of a circle \n 2 - circumference\n 3 - area of the square into which the circle is included\n";
+    cin >> choice;
+    switch (choice)
+    {
+    case 1:
+        cout << "area of a circle "<<3.14*radius*radius<<"\n";
+    	break;
+    case 2:
+        cout << "circumference " <<2*3.14*radius << "\n";
+        break;
+    case 3:
+        cout << "area of the square into which the circle is included " <<4*radius*radius << "\n";
+        break;
+    default:
+        cout << "wrong choice";
+    }
+    return 0;
+}
+/*4. Пользователь вводит номер дня недели, 
+а программа выводит его словесное наименование. 
+Допустим 2 - вторник*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    short int choice;
+    cout << "Enter day of a week\n";
+    cin >> choice;
+    switch (choice)
+    {
+    case 1:
+        cout << "Monday\n";
+        break;
+    case 2:
+        cout << "Tuesday\n";
+        break;
+    case 3:
+        cout << "Wednesday\n";
+        break;
+    case 4:
+        cout << "Thursday\n";
+        break;
+    case 5:
+        cout << "Friday\n";
+        break;
+    case 6:
+        cout << "Saturday\n";
+        break;
+    case 7:
+        cout << "Sunday\n";
+        break;
+    default:
+        cout << "wrong number\n";
+    }
+    return 0;
+}
+
+/*5. Пользователь вводит длины сторон треугольника, 
+о программа проверяет возможность существование треугольника
+Треугольник существует только тогда, когда сумма любых двух его сторон больше третьей.*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    float first, second, third;
+    cout << "Enter sides of triangles:\nEnter first\n"; cin >> first;
+    cout << "Enter second\n"; cin >> second;
+    cout << "Enter third\n"; cin >> third;
+    if (first<=0||second<=0||third<=0)
+    {
+        cout << "Triangle not exist\n";
+    }
+	else
+	{
+        if ((first + second > third) && (first + third > second) && (third + second > first)) {
+            cout << "Triangle exist\n";
+        }
+        else
+            cout << "Triangle not exist\n";
+	}
+    return 0;
+}
+
+
+
