@@ -87,6 +87,7 @@ ipch/
 *.vsp
 *.vspx
 *.sap
+*.exe
 
 # TFS 2012 Local Workspace
 $tf/
@@ -258,4 +259,4 @@ CW/02Module/202/TestWcf/Client/TestWcfSite/TestWcfSite/Log/*.txt
 CW/02Module/202/TestWcf/Client/TestWcfSite/TestWcfSite/Log/*
 
 obj/
-*.exe
+bin/
