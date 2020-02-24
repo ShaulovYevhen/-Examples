@@ -14,7 +14,7 @@ using namespace  std;
 
 int bone_create()
 {
-	int bone = rand() % 6 + 1; 
+	int bone = rand() % 6 + 1;
 	return bone;
 }
 
@@ -42,6 +42,22 @@ void bone_show(int bone) //вывод кубика на экран
 		break;
 	}
 }
+void who_win(int pc_bone, int user_bone)
+{
+	
+	if (pc_bone == user_bone)
+	{
+		cout << "\n  Draw\n\n";
+	}
+	else if (pc_bone > user_bone)
+	{
+		cout << "\n  PC win\n\n";
+	}
+	else
+	{
+		cout << "\n  You win\n\n";
+	}
+}
 
 int input_int()
 {
@@ -63,8 +79,8 @@ int main()
 	int pc_bone; //переменная для кости ПК
 	int user_bone;//переменная для кости игрока
 	int game = 5;
-	int pc_win = 0; //кол-во побeд ПК
-	int user_win = 0; //кол-во побед пользователя
+	int pc_sum = 0;
+	int user_sum = 0;
 	cout << "Hello! Its a bones game! U wanna go first or second?(enter 1 or 2)\n";
 	int whoFirst = input_int();
 	while (whoFirst != 1 && whoFirst != 2)
@@ -72,72 +88,63 @@ int main()
 		cout << "Wrong input, enter 1 or 2 pls." << endl;
 		whoFirst = input_int();
 	}
-	while (game != 0)
+	cout << endl;
+	if (whoFirst == 1)
 	{
-		cout << endl;
-		if (whoFirst = 1)
+		while (game != 0)
 		{
 			cout << "Your bone" << endl;
 			user_bone = bone_create();
+			user_sum += user_bone;
 			bone_show(user_bone);
 			cout << endl;
 			cout << "PC bone" << endl;
 			pc_bone = bone_create();
 			bone_show(pc_bone);
-			if (pc_bone == user_bone)
-			{
-				cout << "Draw\n";
-			}
-			else if (pc_bone > user_bone)
-			{
-				cout << "PC win\n";
-				pc_win++;
-			}
-			else
-			{
-				cout << "You win\n";
-				user_win++;
-			}
+			pc_sum += pc_bone;
+			who_win(pc_bone, user_bone);
 			Sleep(2000);
+			game--;
 		}
-		else
-		{
-			cout << "PC bone" << endl;
-			pc_bone = bone_create();
-			bone_show(pc_bone);
-			cout << endl;
-			cout << "Your bone" << endl;
-			user_bone = bone_create();
-			bone_show(user_bone);
-			if (pc_bone == user_bone)
-			{
-				cout << "Draw\n";
-			}
-			else if (pc_bone > user_bone)
-			{
-				cout << "PC win\n";
-				pc_win++;
-			}
-			else
-			{
-				cout << "You win\n";
-				user_win++;
-			}
-			Sleep(2000);
-		}
-		game--;
-	}
-	
-	if (user_win == pc_win)
-	{
-		cout << "Draw!\n";
-	}
-	else if (user_win > pc_win)
-	{
-		cout << "You won match!\n";
 	}
 	else
 	{
-		cout << "PC won match!\n";
+		while (game != 0)
+		{
+			cout << "PC bone" << endl;
+			pc_bone = bone_create();
+			pc_sum += pc_bone;
+			bone_show(pc_bone);
+			cout << endl;
+			cout << "Your bone" << endl;
+			user_bone = bone_create();
+			user_sum += user_bone;
+			bone_show(user_bone);
+			who_win(pc_bone, user_bone);
+			Sleep(2000);
+			game--;
+		}
+	}
+
+	if (user_sum == pc_sum)
+	{
+		cout << "Your points " << user_sum << " \n" << "Pc points " << pc_sum << "\n\n Draw!\n\n";
+		cout << "Average value of points per game: \n";
+		cout << "Pc = " << (float)pc_sum / 5 << endl;
+		cout << "User = " << (float)user_sum / 5 << endl;
+	}
+	else if (user_sum > pc_sum)
+	{
+		cout << "Your points " << user_sum << " \n" << "Pc points " << pc_sum << "\n\n You won match!\n\n";
+		cout << "Average value of points per game: \n";
+		cout << "Pc = " << (float)pc_sum / 5 << endl;
+		cout << "User = " << (float)user_sum / 5 << endl;
+	}
+	else
+	{
+		cout << "Your points " << user_sum << " \n" << "Pc points " << pc_sum << "\n\n PC won match!\n\n";
+		cout << "Average value of points per game: \n";
+		cout << "Pc = " << (float)pc_sum / 5 << endl;
+		cout << "User = " << (float)user_sum / 5 << endl;
 	}
 }
