@@ -1,0 +1,19 @@
+#include <iostream>
+#include <sstream>
+
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "rus");
+    string str = "Иванов И.И.; 380636016011; ivanov1980@mail.ru";
+    stringstream ss(str);
+    string token;
+    string s[3];
+    int i=0;
+    while (getline(ss, token, ';'))
+    {
+        s[i] = token;
+        i++;
+    }
+    cout << s[0] << "\t" << s[1] << "\t" << s[2] << "\n";
+}

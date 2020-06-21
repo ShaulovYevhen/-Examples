@@ -1,0 +1,165 @@
+// Cоздать телефонную книгу.
+// Поля : ФИО, номер телефона, email.
+//- Заполнение из файла и из консоли
+//   - создать структуру
+//     - Добавление увеличения динамического массива структур
+//   - размер файла
+//   - открыть файл
+//   - считать первую строку
+//   - разделить по элементам
+//   - добавить в структуру новую строку 
+//   - добавить новую запись в структуру
+//- Сортировка по имени
+//- Добавление и удаление элементов
+//- Редактирование элементов
+//- Поиск элементов
+//- Ну и вывод на экран само собой
+
+#include <stdlib.h> 
+#include <iostream> 
+#include <fstream> 
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+struct PhoneBook
+{
+    string name;
+    string phone;
+    string email;
+};
+
+int input_int()
+{
+    int i;
+    cin >> i;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore(100, '\n');
+        cout << "Wrong input, enter digit pls." << endl;
+        cin >> i;
+    }
+    return i;
+}
+
+PhoneBook* Add(PhoneBook* MyPhoneBook, int const count) //функция увеличения динамического массива структур
+{
+    if (count == 0)
+    {
+        MyPhoneBook = new PhoneBook[1];
+    }
+    else
+    {
+        PhoneBook* temp = new PhoneBook[count + 1];
+        for (int i = 0; i < count; i++)
+        {
+            temp[i] = MyPhoneBook[i];
+        }
+        delete[] MyPhoneBook;
+        MyPhoneBook = temp;
+    }
+    return MyPhoneBook;
+}
+
+void ShowData(PhoneBook* MyPhoneBook, int size)
+{
+    cout << "Номер ПП\tФИО\tНомер телефона\t E-mail\n";
+    for (int i = 0; i < size; i++)
+    {
+        cout << i + 1 << "\t" << MyPhoneBook[i].name << "\t" << MyPhoneBook[i].phone << "\t" << MyPhoneBook[i].email << "\n";
+    }
+}
+
+PhoneBook* Read(const char* filename, PhoneBook MyPhoneBook[])
+{
+    ifstream fin(filename);
+    int j = 0;
+    if (!fin)
+    {
+        cout << "File not open\n";
+    }
+    else
+    {
+        string buff;
+        while (getline(fin, buff))
+        {
+            MyPhoneBook = Add(MyPhoneBook, j);
+            stringstream ss(buff);
+            string token;
+            string s[3];
+            int i = 0;
+            while (getline(ss, token, ';'))
+            {
+                s[i] = token;
+                i++;
+            }
+            MyPhoneBook[j].name = s[0];
+            MyPhoneBook[j].phone = s[1];
+            MyPhoneBook[j].email = s[2];
+            j++;
+        }
+    }
+    return MyPhoneBook;
+    fin.close();
+}
+
+void SetData(PhoneBook MyPhoneBook[], int const count)//функция заполнения последнего элемемнта массива структур
+{
+    cout << "Введите имя(англ) и нажмите Enter\n"; getline(cin, MyPhoneBook[count].name);
+    cin.ignore();
+    cout << "Введте номер телефонаи нажмите Enter\n"; getline(cin, MyPhoneBook[count].phone);
+    cin.ignore();
+    cout << "Введите емайли нажмите Enter\n"; getline(cin, MyPhoneBook[count].email);
+    cin.ignore();
+}
+
+int main()
+{
+    setlocale(LC_ALL, "rus");
+    PhoneBook* MyPhoneBook = 0;//указатель на массив структур
+    int choice = 0;
+    while (choice != 8)
+    {
+        cout << "Выберите действие:\n1.Открыть\n2.Добавить\n3.Удалить\n4.Отсортировать\n5.Редактировать\n6.Поиск\n7.Вывести на экран.\n8.Выход." << endl;
+        choice = input_int();
+        switch (choice)
+        {
+        case 1:
+            MyPhoneBook = Read("PhoneBook.txt", MyPhoneBook);
+            ShowData(MyPhoneBook, sizeof(MyPhoneBook));
+            break;
+        case 2:
+            MyPhoneBook = Add(MyPhoneBook, sizeof(MyPhoneBook));
+            SetData(MyPhoneBook, sizeof(MyPhoneBook));
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        case 7:
+            ShowData(MyPhoneBook, sizeof(MyPhoneBook));
+            break;
+        default:
+            choice = 8;
+            break;
+        }
+        cout << endl;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
