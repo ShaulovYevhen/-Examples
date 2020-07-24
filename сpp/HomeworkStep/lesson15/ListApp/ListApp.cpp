@@ -7,7 +7,7 @@ int main()
     List<int> list{ 23,45,56 };
     List<int> li{ 23,45,56 };
     auto l = list;
-    l.print();
+    //l.print();
     list.print();
     list.push_back(234);
     list.print();
